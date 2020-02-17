@@ -315,7 +315,7 @@ static dispatch_once_t onceToken;
     }
     [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:@"FEAA"],
                                                           [CBUUID UUIDWithString:@"FEAB"]]
-                                                options:nil];
+                                                options:@{CBCentralManagerScanOptionAllowDuplicatesKey: @(YES)}];
 }
 
 - (void)stopScanPeripheral{
